@@ -1,5 +1,5 @@
 /**
- * Created by ½¨Àû on 2017/9/19.
+ * Created by å»ºåˆ© on 2017/9/19.
  */
 $(function(){
     $("#hide").tap(function(){
@@ -9,6 +9,8 @@ $(function(){
     $("#color>div").tap(function(){
         var i=$(this).index()-1;
         var src=$(this).attr("src");
+        var q=$(this).index();
+        $(".main div").eq(q).show().siblings().hide();
         for(var a=0;a<5;a++){
             $(".banner img").eq(a).attr("src","images/"+src+(a+1)+".jpg");
         }
@@ -22,11 +24,11 @@ $(function(){
 
     $(window).scroll(
         function(){
-            //´¹Ö±¹ö¶¯Ìõ¹ö¶¯µÄ¾àÀë
+            //åž‚ç›´æ»šåŠ¨æ¡æ»šåŠ¨çš„è·ç¦»
             var a=$(window).scrollTop();
 
             console.log(a)
-            //ÅÐ¶Ï¹ö¶¯Ìõ¹ö¶¯µÄ¾àÀë
+            //åˆ¤æ–­æ»šåŠ¨æ¡æ»šåŠ¨çš„è·ç¦»
             if(a>=1250){
                 $(".footer_top").addClass("fixed");
             }else{
